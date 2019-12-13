@@ -189,6 +189,7 @@ with this program; if not, write to the Free Software Foundation, Inc.,
       var destIdx = (zoomBox.curImgIdx + (forward ? 1 : -1) +
         zoomImgs.length) % zoomImgs.length;
       setTimeout(zoomBox.showPic.bind(null, destIdx), 10);
+      try { el.blur(); } catch (ignore) {} // avoid Firefox focus border
       return false;
     });
     return el;
